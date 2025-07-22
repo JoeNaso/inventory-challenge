@@ -1,0 +1,28 @@
+name: 'inventory_challenge'
+version: '1.0.0'
+
+profile: 'inventory_challenge'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  inventory_challenge:
+
+    backend:
+      +materialized: view
+
+    core: 
+      +materialized: table
+    
+    shopify:
+      +materialized: view
+
